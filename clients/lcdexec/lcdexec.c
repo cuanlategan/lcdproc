@@ -421,7 +421,7 @@ static int process_response(char *str)
 			    ((entry->type & MT_ARGUMENT) && (entry->next == NULL))) {
 
 				// last arg => get parent entry
-				if ((entry->type & MT_ARGUMENT) && (entry->next == NULL))
+				if (entry->type & MT_ARGUMENT)
 					entry = entry->parent;
 
 				if (entry->type == MT_EXEC)
